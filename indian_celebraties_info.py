@@ -54,7 +54,6 @@ def get_information(url):
 
 
 
-
 def partition(text):
     # partition text so that we can get profession and movie name separetly
     target_text = text.partition("|")  
@@ -63,13 +62,10 @@ def partition(text):
     movie_name.append(target_text[2].strip())
 
 
-
 def download_images(image_ls):
     for image_url in image_ls:
         wget.download(image_url)
     
-
-
 
 def create_folder(folder):
     if os.path.exists(folder):
@@ -78,15 +74,12 @@ def create_folder(folder):
         os.mkdir(folder)
         return folder
     
-    
-    
-    
+        
 def remove_img(folder):    
     path = os.path.join(current_dir,folder)   
     os.chdir(path) 
     [os.remove(file) for file in os.listdir(path) if file.endswith(('.jpg', '.png'))]
     os.chdir(current_dir) 
-
 
 
 def create_database_connection():
@@ -95,8 +88,7 @@ def create_database_connection():
     try:
         conn= mysql.connector.connect(host = "localhost", database = "indian_celebraties",
                                              user = "root",
-                                             password = "shreeRam")
-    
+                                             password = "shreeRam")    
         
         if conn.is_connected():
             
@@ -107,27 +99,20 @@ def create_database_connection():
             cursor.execute("select database();")
         
             record = cursor.fetchone()
-            
             print(f"you are connected to database {record}")
             
             return conn
             
-    
     except Error as err :
         print("Error while connecting to MySQL", err)  
  
     
- 
     
-
 def InsertVariablesIntoTable(name, gender, profession, movie, image,details):
-   
     global conn
     
-    try:
-        
-        if conn.is_connected():
-            
+    try:    
+        if conn.is_connected():    
             cursor = conn.cursor()
             
             query = """insert into celebraty_information
@@ -140,7 +125,6 @@ def InsertVariablesIntoTable(name, gender, profession, movie, image,details):
             #  We also used commit() method to make changes persistent in the database.
             conn.commit()        
             print(cursor.rowcount, "Record inserted successfully into celebraty_information table")
-
     
     except Error as err :
         print("Error while connecting to MySQL", err)
@@ -150,8 +134,6 @@ def InsertVariablesIntoTable(name, gender, profession, movie, image,details):
             cursor.close()
            
         
-    
-   
 def main():
     print("inside main")
     
@@ -187,7 +169,6 @@ def main():
         
         InsertVariablesIntoTable(name_ls[i], gender, profession[i], movie_name[i], image_ls[i],paragraph_ls[i])
 
-    
     print("successfully done...!!")
 
 
