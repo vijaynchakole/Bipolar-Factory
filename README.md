@@ -28,7 +28,7 @@ For Example :
 
 5) personal information : Shahrukh Khan was born on 2 November 1965 in New Delhi, India. He married Gauri Khan on 25 October 1991. They have three children, son Aryan Khan (b. 1997), son AbRam (b.2013) and daughter Suhana (b. 2000). Khan started out his career by appearing in several television serials during 1988-1990. ...
 
-By the same way I have extracting top 100 indian celebraties information for IMDB website :
+By the same way I have extracting top 100 indian celebraties information from IMDB website :
 
 ****************************************************************************************************************************************
 
@@ -73,7 +73,7 @@ Function Name : get_information()
 input : website url
 
 working : it takes url and open webpage with the help of urlopen library. once url opens it brings data in html format.
-then with the help of BeautifulSoup from bs4 library we have read data and extract important information from raw html.
+then with the help of BeautifulSoup from bs4 library we have read data and extract important information from raw html page.
 extracted information is : celebraties's name , their movie name, their profession , image url, personal info.
 
 2) 
@@ -116,7 +116,7 @@ Function Name : create_database_connection()
 
 input : -
 
-working : it create database connection with the help of mysql library.
+working : it creates database connection with the help of mysql library.
 
 output : returns connection variable (conn)
 
@@ -130,7 +130,9 @@ working : it insert data into celebraty_information table in indian_celebraties 
 
 8)
 Function Name : main()
+
 working : calling all above mentioned functions 
+
 Note : it is function which is invokes first by PVM
 
 
