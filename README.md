@@ -4,9 +4,11 @@ Assignment Submission - ML at Bipolar Factory
 
 Project - Crawl popular websites nad create a database of Indian movie celebrities containing their images and personality traits.
 
-plan to attack :
+plan of attack :
+
 I have selected website "https://www.imdb.com/list/ls002913270/" for web scrapping. 
 IMDB website provides top 100 indian celebraties list with their best movie work, images and some personal information.
+
 I have scrapped all  information ralated celebraties. 
 list of scrapped information as per below
 
