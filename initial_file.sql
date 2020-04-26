@@ -1,4 +1,4 @@
-#create database indian_celebraties ;
+create database indian_celebraties ;
 use  indian_celebraties ;
 
 create table celebraty_information
