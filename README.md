@@ -6,7 +6,7 @@ Project - Crawl popular websites nad create a database of Indian movie celebriti
 
 plan to attack :
 I have selected website "https://www.imdb.com/list/ls002913270/" for web scrapping. 
-IMDB website provides top 100 indian celebraties list with their best work movie, images and some personal information.
+IMDB website provides top 100 indian celebraties list with their best movie work, images and some personal information.
 I have scrapped all  information ralated celebraties. 
 list of scrapped information as per below
 
