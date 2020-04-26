@@ -17,7 +17,6 @@ import wget
 import mysql.connector
 from mysql.connector import Error
 
-
 #set current working directory
 os.chdir("C:\\Users\\hp\\Desktop\\Bipolar Factory Project\\")
 #get current working directory
@@ -43,15 +42,13 @@ def get_information(url):
     for image in image_container :
         image_ls.append(image.img["src"])
         name_ls.append(image.img["alt"])
-        
-    
+            
     # extracting class which contains information about celebraties
     data_container = soup.findAll("div", {"class":"lister-item-content"})
     
     for info in data_container :
         paragraph_ls.append( (info.find("p", class_="").get_text()).strip() )
         partition(info.find("p", class_="text-muted text-small").get_text())
-
 
 
 def partition(text):
@@ -90,8 +87,7 @@ def create_database_connection():
                                              user = "root",
                                              password = "shreeRam")    
         
-        if conn.is_connected():
-            
+        if conn.is_connected():        
             db_Info = conn.get_server_info()
             print(f"Connected to sql server version : {db_Info}")
             
@@ -107,7 +103,7 @@ def create_database_connection():
         print("Error while connecting to MySQL", err)  
  
     
-    
+ 
 def InsertVariablesIntoTable(name, gender, profession, movie, image,details):
     global conn
     
